@@ -66,5 +66,30 @@
 
     #define REP(i,a,b) for (int i = a; i <= b; i++)
     
+# Bit Operations
+
+    x is divisible by 2^k exactly when x & (2^k - 1) == 0
     
+    # NOT
+        flips all bits
+            ~x = - x - 1
         
+    # BIT MASKS
+    
+        K'th bit is one if ( x & ( 1<<k) ) != 0
+              
+        # Display binary representation of a number
+            for (int k = 31; k >= 0; k--) {
+                if (x&(1<<k)) cout << "1";
+                else cout << "0";
+            }
+        
+        # Some formulas : 
+        
+            x | (1 << k)        [ Sets the kth bit of x to one ]
+            x & ~(1 << k)       [ sets the kth bit of x to zero ]
+            x ˆ (1 << k)        [ Inverts the kth bit of x ]
+            x & (x − 1)         [ Sets the last one bit of x to zero ]
+            x & −x              [ Sets all the one bits to zero, except for the last one bit ]
+            x | (x − 1)         [ Inverts all the bits after the last one bit ]
+            x & (x − 1) = 0     [ Finds if a positive number x is a power of two exactly ]
